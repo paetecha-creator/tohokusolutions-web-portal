@@ -1,0 +1,6 @@
+{
+  "name": "Tohoku Solutions Web Portal",
+  "description": "Minimalist mobile-friendly corporate web portal for public services and internal organizational web apps.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

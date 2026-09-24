@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" width="540" height="120">
+  <!-- Red Wireframe Globe -->
+  <g transform="translate(270, 32)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#D32F2F" stroke-width="2.5"/>
+    <!-- Equator -->
+    <line x1="-26" y1="0" x2="26" y2="0" stroke="#D32F2F" stroke-width="2"/>
+    <!-- Latitude lines -->
+    <line x1="-22.5" y1="-13" x2="22.5" y2="-13" stroke="#D32F2F" stroke-width="1.8"/>
+    <line x1="-22.5" y1="13" x2="22.5" y2="13" stroke="#D32F2F" stroke-width="1.8"/>
+    <!-- Prime meridian (vertical center) -->
+    <line x1="0" y1="-26" x2="0" y2="26" stroke="#D32F2F" stroke-width="2"/>
+    <!-- Longitude ellipses -->
+    <ellipse cx="0" cy="0" rx="10" ry="26" fill="none" stroke="#D32F2F" stroke-width="1.8"/>
+    <ellipse cx="0" cy="0" rx="19" ry="26" fill="none" stroke="#D32F2F" stroke-width="1.8"/>
+  </g>
+  <!-- Text: TOHOKU SOLUTIONS -->
+  <text x="270" y="98" 
+        text-anchor="middle" 
+        fill="#0066B2" 
+        font-family="system-ui, -apple-system, 'Plus Jakarta Sans', 'Segoe UI', Arial, sans-serif" 
+        font-weight="800" 
+        font-size="34" 
+        letter-spacing="2.5">TOHOKU SOLUTIONS</text>
+</svg>
