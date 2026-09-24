@@ -190,6 +190,29 @@ export const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose, onSucce
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
               </div>
+
+              {/* Helpful Hint & Autofill */}
+              <div className="mt-2 p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] text-slate-600 space-y-1.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span>
+                    🔑 <strong>สำหรับ Admin:</strong> รหัสผ่านคือ <code className="bg-white px-1.5 py-0.5 rounded border border-slate-300 font-bold text-[#0060AA]">admin</code> หรือ <code className="bg-white px-1.5 py-0.5 rounded border border-slate-300 font-bold text-slate-700">122333</code>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setUsername('admin');
+                      setPassword('admin');
+                      if (errorMessage) setErrorMessage(null);
+                    }}
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-[#0060AA] text-white font-semibold hover:bg-[#004f8c] transition-colors cursor-pointer shrink-0"
+                  >
+                    เติมรหัส Admin
+                  </button>
+                </div>
+                <div className="text-[10px] text-slate-400 pt-0.5 border-t border-slate-200/60">
+                  พนักงานทั่วไป: ระบุรหัสพนักงาน (เช่น <code className="text-slate-600">15046</code>) / รหัสผ่าน: <code className="text-slate-600">122333</code>
+                </div>
+              </div>
             </div>
 
             {/* Remember Session Option */}

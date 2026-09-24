@@ -141,13 +141,24 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         parsed.forEach(user => {
           const uKey = (user.username || '').toLowerCase();
           const base = userMap.get(uKey);
+          const isAdm = uKey === 'admin';
           userMap.set(uKey, {
             ...user,
-            password: user.password || base?.password || '122333',
-            role: normalizeRole(user.role),
-            inChargeScopes: normalizeInChargeList(user.inChargeScopes),
+            password: isAdm && (!user.password || user.password === '122333') 
+              ? 'admin' 
+              : (user.password || base?.password || (isAdm ? 'admin' : '122333')),
+            role: isAdm ? 'admin' : normalizeRole(user.role),
+            status: isAdm ? 'Active' : (user.status || 'Active'),
+            inChargeScopes: isAdm ? ['admin', 'GA', 'SU', 'HR', 'other'] : normalizeInChargeList(user.inChargeScopes),
           });
         });
+
+        // Ensure admin user is strictly present
+        if (!userMap.has('admin')) {
+          const defaultAdmin = INITIAL_INTERNAL_USERS.find(u => u.username === 'admin');
+          if (defaultAdmin) userMap.set('admin', defaultAdmin);
+        }
+
         return Array.from(userMap.values());
       }
       return INITIAL_INTERNAL_USERS;

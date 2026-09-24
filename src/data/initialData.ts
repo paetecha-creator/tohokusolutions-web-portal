@@ -230,7 +230,7 @@ export const INITIAL_INTERNAL_USERS: InternalUser[] = [
   {
     id: 'usr-admin',
     username: 'admin',
-    password: '122333',
+    password: 'admin',
     name: 'Techasit Kaeowichian (System Administrator)',
     email: 'techasit.kaeowichian@tohokusolutions.com',
     department: 'SU',
